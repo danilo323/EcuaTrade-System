@@ -1,4 +1,7 @@
-# Simulamos la Base de Datos
+
+'''(TEMPORAL)Simulamos la Base de Datos temporal antes de usa mysqlite3 
+''''''manejada para en formato de inpuns'''
+'''vinculada a memory_repository.py'''
 from src.domain.validators import Fncvalidate_cedula, Fncvalidate_mail, Fncvalidate_name
 from src.application.register_user import RegisterUser
 
@@ -12,7 +15,7 @@ class MemoryRepository:
 
 # --- PRUEBA DEL SISTEMA ---
 if __name__ == "__main__":
-    repo = MemoryRepository()
+    repo = MemoryRepository() #unioin a memory_repository
     cerebro = RegisterUser(repo)
 
     print("--- REGISTRO DE MARKETPLACE ---")

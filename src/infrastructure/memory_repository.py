@@ -1,5 +1,5 @@
-'''base de datos temporal solo sirve para comprobar duplicados (cedula, correo) no obtiene
-ningun dato externo'''
+'''(PRUEBA)
+base de datos temporal solo sirve para comprobar duplicados (cedula, correo) NO USANDO MYSQLE3'''
 
 class clsMemoryRepository:
     def __init__(self):
@@ -27,7 +27,7 @@ class clsMemoryRepository:
     #2 guardar si no existen registrados
 
         self.users.append(user_data)
-        print(f"\n--- [MEMORIA] Usuario {user_data["nombre"]} guardado con éxito ---")
+        print(f"\n Usuario {user_data["nombre"]} guardado con éxito ")
         return True
     
 
