@@ -1,3 +1,4 @@
+('''ver de manera temormal en la base de datos los usuarios no en el main''')
 from src.infrastructure.sqlite_repository import clsSQLiteRepository
 
 def ver_registrados():

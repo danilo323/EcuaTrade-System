@@ -3,7 +3,7 @@
 ''''''manejada para en formato de inpuns'''
 '''vinculada a memory_repository.py'''
 from src.domain.validators import Fncvalidate_cedula, Fncvalidate_mail, Fncvalidate_name
-from src.application.register_user import RegisterUser
+from src.application.register_user import ClsRegisterUser
 
 class MemoryRepository:
     def __init__(self):
@@ -16,7 +16,7 @@ class MemoryRepository:
 # --- PRUEBA DEL SISTEMA ---
 if __name__ == "__main__":
     repo = MemoryRepository() #unioin a memory_repository
-    cerebro = RegisterUser(repo)
+    cerebro = ClsRegisterUser(repo)
 
     print("--- REGISTRO DE MARKETPLACE ---")
     n = input("Nombre: ")

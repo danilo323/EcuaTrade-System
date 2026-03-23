@@ -1,5 +1,5 @@
 from src.infrastructure.sqlite_repository import clsSQLiteRepository
-'''sandboxing= entorno de pruebas para probar mi base de datos '''
+'''(PRUEBA)sandboxing= entorno de pruebas para probar mi base de datos '''
 # Objeto simulado
 class UserMock:
     def __init__(self, cedula, first_name, last_name, email):

@@ -158,7 +158,7 @@ def Fncvalidate_mail(correo: str):
 
 
 
-    #VALIDAR ARCHIVO
+    #VALIDAR CEDULA
 
 #if __name__=="__main__":
 

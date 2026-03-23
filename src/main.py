@@ -1,1 +1,0 @@
-print("Entorno activo y funcionando en mi Lenovo LOQ")

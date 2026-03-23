@@ -1,12 +1,12 @@
 '''Cerebro usamos la fnc cedula para decidir guardar el usuario'''
 from src.domain.validators import Fncvalidate_cedula, Fncvalidate_mail, Fncvalidate_name
 
-class RegisterUser:
+class ClsRegisterUser:
     def __init__(self, repository):
         # Aquí recibimos la base de datos (puerto)
         self.repository = repository
-
-    def execute(self, nombre: str, apellido: str, correo: str, cedula: str ):
+    #aqui executamos todas las funciones de validator. en el orden establecido muy importante
+    def Fnc_Procesar_registro(self, nombre: str, apellido: str, correo: str, cedula: str ):
         """Proceso para registrar un nuevo vendedor o comprador"""
         
         #Validamos la cédula con tu lógica de Ecuador
@@ -23,7 +23,7 @@ class RegisterUser:
             print(f'error el {nombre} y el {apellido} no son validos.')
             return False
 
-        #Preparamos el diccionario de datos
+        #Preparamos el diccionario de datos para mandarlos a sqlite3 y limpiados
         user_data = {
             "nombre": nombre.strip().title(),
             "apellido": apellido.strip().title(),
@@ -31,7 +31,12 @@ class RegisterUser:
             "cedula": cedula.strip()
         }
 
-        # 3. Guardamos (hoy en memoria, mañana en SQLite)
-        self.repository.save(user_data)
-        print(f"✅ ¡Usuario {nombre} registrado con éxito!")
-        return True
+        # 3. Guardamos (en SQLite)
+        verificar_guardar= self.repository.Fnc_Guardar_registro(user_data)
+
+        #mandar en el main para verificar el registrado
+        if verificar_guardar == True:
+            print(f"¡Usuario {nombre} registrado con éxito!")
+            return True
+        elif verificar_guardar == False:
+            print(f'Error: usuario {nombre} no se ha registrado...')
