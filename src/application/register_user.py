@@ -40,3 +40,6 @@ class ClsRegisterUser:
             return True
         elif verificar_guardar == False:
             print(f'Error: usuario {nombre} no se ha registrado...')
+
+
+    
