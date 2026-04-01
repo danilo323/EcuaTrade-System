@@ -43,3 +43,43 @@ EcuaTrade-System/
 ├── .gitignore           # Filtro de archivos para el repositorio
 ├── manage.py            # Orquestador del Framework
 └── requirements.txt     # Dependencias del sistema
+
+```
+
+### 1. Crear el entorno virtual
+```bash
+python -m venv .venv
+```
+
+### 2. Activar el entorno virtual
+```bash
+.venv\Scripts\activate
+```
+
+
+### 3. # Instalar Django y las librerías necesarias 
+```bash
+pip install -r requirements.txt
+```
+
+
+### 4. # Crear los archivos de migración
+```bash
+python manage.py makemigrations
+```
+
+
+### 5. Aplicar las migraciones a SQLite
+```bash
+python manage.py migrate
+```
+
+### 6. Iniciar el motor de Django
+```bash
+python manage.py runserver
+
+```
+
+
+
+
