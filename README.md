@@ -41,3 +41,24 @@ EcuaTrade-System/
 │   └── repository/     # Almacenamiento temporal (MemoryRepository).
 ├── tests/              # Pruebas unitarias de componentes.
 └── test_register.py    # Punto de entrada principal para demostraciones.
+
+
+
+
+#isntalacion de django
+
+1. python -m venv .venv   (crea el entorno virtual)
+
+2..venv\Scripts\activate (lo activa)
+
+3.pip install django   (descarga el motor web)
+
+4.django-admin startproject ecuatrade_pro . (creacion del esqueleto los archivos de configuracion )
+
+5.pip freeze > requirements.txt (crea el archivo de requerimentos)
+
+6.python manage.py runserver (lo enciende )
+
+
+7.creacion de carpeta mvt
+python manage.py startapp inventario

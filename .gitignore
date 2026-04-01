@@ -1,0 +1,26 @@
+# Entornos Virtuales (¡NUNCA se suben!)
+.venv/
+venv/
+env/
+ENV/
+
+# Base de Datos (Seguridad y peso)
+*.db
+*.sqlite3
+db.sqlite3
+
+# Archivos de configuración sensible (Passwords, API Keys de Google)
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Carpeta de fotos de productos (Media)
+# No queremos que tus fotos de prueba llenen el servidor de código
+media/
+
+# Archivos de VS Code
+.vscode/

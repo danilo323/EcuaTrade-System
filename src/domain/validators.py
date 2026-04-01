@@ -13,6 +13,9 @@ def Fncvalidate_cedula(cedula:str):
         print("cedula presenta 10 caracteres")
         return False
     
+
+    
+    
     #esocogemos los primeros digitos 
     #primer 1 y 2 digitos provincia
     array_digitoProvincia=int(cedula[0:2])
