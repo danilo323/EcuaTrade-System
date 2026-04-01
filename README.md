@@ -43,3 +43,9 @@ EcuaTrade-System/
 ├── .gitignore           # Filtro de archivos para el repositorio
 ├── manage.py            # Orquestador del Framework
 └── requirements.txt     # Dependencias del sistema
+
+
+### 1. Clonar el repositorio e ingresar
+```bash
+git clone https://github.com/danilo323/EcuaTrade-System.git
+cd EcuaTrade-System
