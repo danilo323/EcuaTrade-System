@@ -28,6 +28,14 @@ El sistema garantiza la integridad de los datos mediante validadores personaliza
 * **Django ORM:** Gestión eficiente de base de datos SQLite.
 * **Panel Administrativo:** Interfaz profesional para la gestión de productos y stock con logs de auditoría.
 
+* ### 🎨 FRONTEND & UI
+* **Mantenibilidad:** Uso de motores de plantillas de Django para interfaces dinámicas.
+* **Experiencia de Usuario:** Diseño enfocado en la simplicidad para el registro de productos técnicos y agrícolas.
+
+### 🔗 INTEGRACIONES EXTERNAS
+* **Arquitectura Escalable:** Preparado para la futura implementación de APIs de pago y servicios de mensajería locales.
+* **Core Modul
+
 ---
 
 ## 📂 ESTRUCTURA DEL PROYECTO (MVT Architecture)
