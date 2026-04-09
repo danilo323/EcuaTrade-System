@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'inventario' #implementacion
+    #apps
+    'inventario', #implementacion
+    'usuarios', #implementacion 
+    
+    #herramienta para el backend
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -117,3 +122,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
+
+#IMPLEMENTACION DONDE SE GUARDARAN LAS FOTOS 
+
+
+# ==========================================
+# CONFIGURACIÓN DE ARCHIVOS MULTIMEDIA (FOTOS)
+# ==========================================
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

@@ -1,10 +1,12 @@
-from django.contrib import admin
-from django.urls import path
-
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
+router = DefaultRouter()
+
+# 👈 AQUÍ ESTÁ EL CAMBIO: Agregamos el basename al final
+router.register(r'productos', views.ProductoViewSet, basename='producto')
 
 urlpatterns = [
-   # name='registrar_producto' es el apodo para usarlo en el HTML después
-    path('registrar/', views.registrar_producto_view, name='registrar_producto'),
+    path('', include(router.urls)),
 ]

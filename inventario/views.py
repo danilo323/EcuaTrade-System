@@ -1,37 +1,33 @@
-# Create your views here.
-from django.shortcuts import render, redirect
+from rest_framework import viewsets, permissions
 from .models import Producto
-from django.core.exceptions import ValidationError
+from .serializers import ProductoSerializer
+from .permissions import IsOwnerOrReadOnly # Tu regla de "Solo el dueño toca"
 
-def registrar_producto_view(request):
-    if request.method == "POST":
-        # 1. Recibimos los datos (esto reemplaza tus parámetros de función)
-        nombre = request.POST.get('nombre')
-        precio = request.POST.get('precio')
-        stock = request.POST.get('stock', 0)
+class ProductoViewSet(viewsets.ModelViewSet):
+    # 1. El traductor de datos
+    serializer_class = ProductoSerializer
 
-        try:
-            # 2. Creamos el objeto (Esto reemplaza tu user_data y el Repository)
-            nuevo_producto = Producto(
-                nombre_producto=nombre.strip().title(),
-                precio=precio,
-                stock=stock
-            )
-            
-            # 3. ¡IMPORTANTE! Forzamos a Django a revisar tus validadores
-            nuevo_producto.full_clean() 
-            
-            # 4. Guardamos (Esto reemplaza a Fnc_Guardar_producto_db)
-            nuevo_producto.save()
-            
-            mensaje = f"✅ Éxito: El producto {nombre} ya está en la tienda."
-            return render(request, 'inventario/registro.html', {'mensaje': mensaje})
+    # 2. Las reglas de seguridad
+    # IsAuthenticatedOrReadOnly: Cualquiera ve, logueados crean.
+    # IsOwnerOrReadOnly: Solo el dueño del producto puede editar o borrar.
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
-        except ValidationError as e:
-            # Si algo falla (precio <= 0, nombre vacío), el Model lanza el error aquí
-            error_mensaje = f"❌ Error: {e.messages[0]}"
-            return render(request, 'inventario/registro.html', {'error': error_mensaje})
+    # 3. El filtro inteligente (Lo que me pediste)
+    def get_queryset(self):
+        user = self.request.user
+        
+        # Si el usuario es Admin (Staff), ve TODO el inventario
+        if user.is_staff:
+            return Producto.objects.all()
+        
+        # Si es un vendedor normal (como Juan), ve SOLO sus productos
+        # Si no está logueado, devolvemos todo (para que los clientes puedan comprar)
+        if user.is_authenticated:
+            return Producto.objects.filter(vendedor=user)
+        
+        return Producto.objects.all()
 
-    return render(request, 'inventario/registrar.html')
-
-
+    # 4. El "Sello de Propiedad"
+    # Cuando se crea un producto, Django le pone el nombre del que está logueado
+    def perform_create(self, serializer):
+        serializer.save(vendedor=self.request.user)
