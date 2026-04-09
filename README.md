@@ -28,6 +28,14 @@ El sistema garantiza la integridad de los datos mediante validadores personaliza
 * **Django ORM:** Gestión eficiente de base de datos SQLite.
 * **Panel Administrativo:** Interfaz profesional para la gestión de productos y stock con logs de auditoría.
 
+* ### 🎨 FRONTEND & UI
+* **Mantenibilidad:** Uso de motores de plantillas de Django para interfaces dinámicas.
+* **Experiencia de Usuario:** Diseño enfocado en la simplicidad para el registro de productos técnicos y agrícolas.
+
+### 🔗 INTEGRACIONES EXTERNAS
+* **Arquitectura Escalable:** Preparado para la futura implementación de APIs de pago y servicios de mensajería locales.
+* **Core Modul
+
 ---
 
 ## 📂 ESTRUCTURA DEL PROYECTO (MVT Architecture)
@@ -44,49 +52,42 @@ EcuaTrade-System/
 ├── manage.py            # Orquestador del Framework
 └── requirements.txt     # Dependencias del sistema
 
+```
 
-
-
-GUÍA DE DESPLIEGUE LOCAL
-Siga estos pasos para replicar el entorno de desarrollo en su máquina:
-
-Clonar el repositorio e ingresar:
-
-
-git clone [https://github.com/danilo323/EcuaTrade-System.git](https://github.com/danilo323/EcuaTrade-System.git)
-cd EcuaTrade-System
-
-
-Crear y activar el entorno virtual:
-
+### 1. Crear el entorno virtual
+```bash
 python -m venv .venv
-# En Windows:
+```
+
+### 2. Activar el entorno virtual
+```bash
 .venv\Scripts\activate
+```
 
 
-Instalar dependencias:
-
+### 3. # Instalar Django y las librerías necesarias 
+```bash
 pip install -r requirements.txt
+```
 
 
-Ejecutar migraciones (Preparar Base de Datos):
-
+### 4. # Crear los archivos de migración
+```bash
 python manage.py makemigrations
+```
+
+
+### 5. Aplicar las migraciones a SQLite
+```bash
 python manage.py migrate
+```
 
-
-
-Lanzar servidores:
-
+### 6. Iniciar el motor de Django
+```bash
 python manage.py runserver
 
+```
 
-### 📝 Instrucciones para guardarlo:
-1. Abre tu archivo `README.md` en VS Code.
-2. Borra todo lo que tiene.
-3. Pega este texto.
-4. Guarda el archivo.
-5. Haz el combo de Git:
-   * `git add .`
-   * `git commit -m "Docs: Actualización de README con especificaciones técnicas de Django"`
-   * `git push origin main`
+
+
+
