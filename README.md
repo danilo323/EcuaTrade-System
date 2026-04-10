@@ -1,4 +1,4 @@
-# 🇪🇨 EcuaTrade-System: Core Marketplace Backend
+# 🇪🇨 EcuaTrade-System: Core Marketplace backend.
 
 ![Python](https://img.shields.io/badge/Language-Python%203.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Framework-Django-092E20?style=for-the-badge&logo=django&logoColor=white)
