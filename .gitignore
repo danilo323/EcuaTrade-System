@@ -24,3 +24,6 @@ media/
 
 # Archivos de VS Code
 .vscode/
+# Node modules
+node_modules/
+package-lock.json

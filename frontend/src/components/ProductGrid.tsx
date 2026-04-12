@@ -1,84 +1,88 @@
 const productos = [
   {
     id: 5,
+    vendedor: "vendedor_juan",
     nombre_producto: 'Mouse Gamer Inalámbrico "EcuaSwift" RGB',
     precio: "32.50",
     stock: 15,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop",
+    badge: "NEW",
+    imagen: "http://127.0.0.1:8000/media/productos/78a21e19-b9b3-4638-889c-79a97de35efd.png"
   },
   {
     id: 6,
-    nombre_producto: 'Micrófono Gamer "Babahoyo Sound" Pro (Rojo)',
+    vendedor: "vendedor_juan",
+    nombre_producto: 'Microfono Gamer "Babahoyo Sound" Pro (Rojo)',
     precio: "39.99",
     stock: 29,
     badge: "HOT",
-    imagen: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/12314064-9d0b-47bf-bf1d-a7f405457423.avif"
   },
   {
     id: 7,
+    vendedor: "vendedor_juan",
     nombre_producto: 'Teclado Mecánico TKL "Andes Pro" (Teclas Blancas)',
     precio: "58.00",
     stock: 23,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/798353ad-949d-41fc-9193-77acf0aa7367.avif"
   },
   {
     id: 8,
+    vendedor: "vendedor_juan",
     nombre_producto: "Adaptador doble HDMI 2.5",
     precio: "12.00",
     stock: 45,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/5a6a9463-c062-46a8-82cd-2c351a2430ea.avif"
   },
   {
     id: 9,
+    vendedor: "vendedor_juan",
     nombre_producto: "M.2 SSD DATA 512 GB",
     precio: "90.00",
     stock: 30,
     badge: "NEW",
-    imagen: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/15911428-cea8-4de0-9469-72c7d499360c.avif"
   },
   {
     id: 10,
-    nombre_producto: 'Deskmat / Mousepad XL "Guayas Black"',
+    vendedor: "vendedor_juan",
+    nombre_producto: 'Deskmat / Mousepad XL "Guayas Black',
     precio: "15.00",
     stock: 28,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/733108d276ad4ae2878012d1ee94f0fb-goods.avif"
   },
   {
     id: 11,
-    nombre_producto: "Wireless Game Control — PC",
+    vendedor: "vendedor_juan",
+    nombre_producto: "Wirelees Game Control - PC",
     precio: "25.00",
     stock: 11,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/6bedf176-f8c5-47b8-86fd-fe60adf40323.avif"
   },
   {
     id: 12,
-    nombre_producto: "Teclado Mecánico Negro KLC Rainwood",
+    vendedor: "vendedor_juan",
+    nombre_producto: "Teclado mecánico Negro, KLC Rainwobd",
     precio: "39.99",
     stock: 27,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=400&h=400&fit=crop",
+    imagen: "http://127.0.0.1:8000/media/productos/5d746409-221e-4e37-94c5-17c3122b4ca3.avif"
   },
   {
     id: 13,
+    vendedor: "vendedor_juan",
     nombre_producto: 'Control Inalámbrico "Chimborazo Elite"',
     precio: "49.99",
     stock: 32,
-    badge: "",
-    imagen: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=400&h=400&fit=crop",
+    imagen: null
   },
   {
     id: 14,
+    vendedor: "vendedor_juan",
     nombre_producto: 'Mando Multiplataforma "Tungurahua Play" Bluetooth',
     precio: "39.99",
     stock: 39,
     badge: "HOT",
-    imagen: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=400&h=400&fit=crop",
-  },
+    imagen: "http://127.0.0.1:8000/media/productos/14102bf5-9832-4905-84e4-401cd7e1c8c6.avif"
+  }
 ];
 
 const ProductGrid = () => {

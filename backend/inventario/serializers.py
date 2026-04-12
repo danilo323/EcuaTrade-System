@@ -1,17 +1,38 @@
-from rest_framework import serializers #llamamos a la tecnologia rest_frmowekr aqui
-from .models import Producto #para especificar quew datos vamos a convertir a json, q se traduce
+from rest_framework import serializers
+from .models import Producto, Categoria, ProductoImagen, Variante
 
+# 1. TRADUCTOR DE CATEGORÍAS
+class CategoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = '__all__'
 
-'''transformar a sqlite a formato JSON PARA REACT'''
+# 2. TRADUCTOR DE IMÁGENES EXTRA
+class ProductoImagenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductoImagen
+        fields = ['id', 'imagen', 'es_principal']
 
+# 3. TRADUCTOR DE VARIANTES (RAM, Color, etc.)
+class VarianteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Variante
+        fields = ['id', 'nombre', 'opcion', 'stock_variante', 'imagen_asociada']
+
+# 4. TRADUCTOR MAESTRO (Producto)
 class ProductoSerializer(serializers.ModelSerializer):
-    # Hacemos que el vendedor sea de solo lectura
-    # Además, mostramos el nombre del usuario en lugar de solo el ID
     vendedor = serializers.ReadOnlyField(source='vendedor.username')
+    categoria_detalle = CategoriaSerializer(source='categoria', read_only=True)
+    # Añadimos esto para asegurar que el formulario de DRF muestre el dropdown
+    categoria = serializers.PrimaryKeyRelatedField(queryset=Categoria.objects.all())
+    imagenes = ProductoImagenSerializer(many=True, read_only=True)
+    variantes = VarianteSerializer(many=True, read_only=True)
+    badge = serializers.ReadOnlyField()
 
     class Meta:
         model = Producto
-        fields = ['id', 'nombre_producto', 'precio', 'stock', 'imagen', 'vendedor']
-    class Meta:
-        model = Producto
-        fields = '__all__' # Esto significa: "Traduce todas las columnas de la tabla"
+        fields = [
+            'id', 'vendedor', 'nombre_producto', 'precio', 'stock', 
+            'imagen', 'categoria', 'categoria_detalle', 
+            'imagenes', 'variantes', 'badge', 'ventas_totales'
+        ]

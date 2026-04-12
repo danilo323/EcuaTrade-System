@@ -6,6 +6,7 @@ router = DefaultRouter()
 
 # 👈 AQUÍ ESTÁ EL CAMBIO: Agregamos el basename al final
 router.register(r'productos', views.ProductoViewSet, basename='producto')
+router.register(r'categorias', views.CategoriaViewSet, basename='categoria')
 
 urlpatterns = [
     path('', include(router.urls)),
