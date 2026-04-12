@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* ── Variables globales ─────────────────────────────────── */
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reset base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Root container — ya NO restringe ancho ─────────────── */
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
